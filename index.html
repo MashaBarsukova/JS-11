@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>hw-11</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+
+      <form class="task-panel">
+        <div class="task-panel__caption">
+          <p class="task-panel__heading">Task Panel</p>
+        </div>
+        <!-- =======getAllUsers()======= -->
+        <div class="search-form">
+          <p class="search-form__task">Show all Users of Database</p>
+          <button class="mdc-btn js-get" type="submit">get</button>
+        </div>
+        <!-- =======getUserById(id)======= -->
+        <div class="search-form">
+          <p class="search-form__task">Search User by ID</p>
+          <input class="input-id" type="text" name="userId" placeholder="Enter user ID">
+          <button class="mdc-btn js-get-id" type="submit">search</button>
+        </div>
+        <!-- =======addUser(name, age)======= -->
+        <div class="search-form">
+          <p class="search-form__task">Add new User</p>
+          <input class="input-add-name" type="text" name="name" placeholder="Enter user name">
+          <input class="input-add-age" type="text" name="age" placeholder="Enter user age">
+          <button class="mdc-btn js-post-add" type="submit">add</button>
+        </div>
+        <!-- =======removeUser(id)======= -->
+        <div class="search-form">
+          <p class="search-form__task">Remove User by ID</p>
+          <input class="input-remove" type="text" name="userId" placeholder="Enter user ID">
+          <button class="mdc-btn js-post-remove" type="submit">remove</button>
+        </div>
+        <!-- =======updateUser(id, user)======= -->
+        <div class="search-form">
+          <p class="search-form__task">Update user data</p>
+          <input class="input-update-id" type="text" name="userId" placeholder="Enter user ID">
+          <input class="input-update-name"  type="text" name="name" placeholder="Enter user name">
+          <input class="input-update-age" type="text" name="age" placeholder="Enter user age">
+          <button class="mdc-btn js-put-update" type="submit">update</button>
+        </div>
+      </form>
+
+      <div class="result-panel">
+        <div class="result-panel__caption">
+          <p class="result-panel__heading">Result Panel</p>
+          <div class="result-panel__btn">
+            <button class="mdc-btn show-res" type="button">show</button>
+            <button class="mdc-btn hide-res" type="button" name="button">hide</button>
+          </div>
+        </div>
+        <table class="result-panel__table" hidden>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>AGE</th>
+            </tr>
+          </thead>
+          <tbody id="js-tbody"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <script type="text/template" id="table-row">
+      <tr scope="row">
+        <td><%- id%></td>
+        <td><%- name%></td>
+        <td><%- age%></td>
+      </tr>
+    </script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>
